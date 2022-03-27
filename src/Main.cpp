@@ -15,12 +15,12 @@ void draw_board();
 void player_first();
 void put_X_O(char ch, int pos);
 
-//Created a COORD structure and filled in its members.
-//Specifies the new position of the cursor to be set.
+// Created a COORD structure and filled in its members.
+// Specifies the new position of the cursor to be set.
 COORD coord = {0, 0}; // GLOBAL VARIABLE
-//Center of axis is set to the top left cornor of the screen.
+// Center of axis is set to the top left cornor of the screen.
 
-//Moves the cursor to a specified location on console.
+// Moves the cursor to a specified location on console.
 void gotoxy(int x, int y)
 {
     coord.X = x;
@@ -28,9 +28,9 @@ void gotoxy(int x, int y)
 
     // --> Obtained a handle to the console screen buffer.
     
-    //Handle used to write to the console. Set the console cursor position then uses the 
-    //handle and the coordinates we specified to place the blinking cursor in our command 
-    //prompt.
+    // Handle used to write to the console. Set the console cursor position then uses the 
+    // handle and the coordinates we specified to place the blinking cursor in our command 
+    // prompt.
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
@@ -38,7 +38,7 @@ int main()
 {
     int InitChoice;
     
-    //Cleared the screen.
+    // Cleared the screen.
     system("CLS");
 
     std :: cout << "                                                           <--------  | Tic-Tac-Toe |  -------->              " << std ::endl;
@@ -49,7 +49,7 @@ int main()
     std :: cin >> InitChoice;
     std :: cout << "Your choice is " << InitChoice << std ::endl;
     
-    //Cleared the screen
+    // Cleared the screen
     system("cls"); 
 
     if (InitChoice == 0)
@@ -60,7 +60,7 @@ int main()
 
         getch();
         
-        //Cleared the screen
+        // Cleared the screen
         system("cls");
         menu();
 
@@ -119,7 +119,7 @@ void menu()
 {
     int choice;
 
-    //Cleared the screen
+    // Cleared the screen
     system("cls");
 
     std :: cout << "\n1 : Play with X" << std :: endl;
@@ -375,4 +375,3 @@ void put_X_O(char ch, int pos)
     gotoxy(x, y);
     std :: cout << ch << std :: endl;
 }
-
